@@ -17,6 +17,8 @@ class _ShopFormPageState extends State<ShopFormPage> {
   String _name = "";
   int _price = 0;
   String _description = "";
+  DateTime _date_added = DateTime.now();
+
   @override
   Widget build(BuildContext context) {
     final request = context.watch<CookieRequest>();
@@ -125,6 +127,7 @@ class _ShopFormPageState extends State<ShopFormPage> {
                             'name': _name,
                             'price': _price.toString(),
                             'description': _description,
+                            'date_added': _date_added.toString(),
                             // TODO: Adjust the fields with your Django model
                           }));
                       if (response['status'] == 'success') {
